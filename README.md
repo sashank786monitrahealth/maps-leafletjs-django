@@ -17,3 +17,15 @@ Building Interactive Maps using Leafletjs and Django
 <li>source WaterWatch/venv/bin/activate</li>
 <li>pip install django-toolbelt</li>
 </ul>
+
+<h2>Setup django stuffs</h2>
+<ul>
+<li>cd WaterWatch/</li>
+<li>django-admin.py startproject waterwatch <b>.</b></li>
+<li>python manage.py startapp waterwatchapp</li>
+<li>python manage.py runserver</li>
+</ul>
+
+<h3>http://localhost:8000/</h3>
+
+
