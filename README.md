@@ -58,7 +58,7 @@ update-alternatives: using /usr/share/postgresql/11/man/man1/postmaster.1.gz to 
 <h2>Install postgis</h2>
 <ul>
     <li>sudo apt install postgis postgresql-11-postgis-3</li>
-    <li>sudo apt-get update</li>
+    <li>sudo apt-get install postgresql-11-pgrouting</li>
 </ul>
 
 
@@ -71,6 +71,36 @@ Ver Cluster Port Status Owner    Data directory              Log file <br>
 12  main    5433 down   postgres /var/lib/postgresql/12/main /var/log/postgresql/postgresql-12-main.log <br>
 update-alternatives: using /usr/share/postgresql/12/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode <br>
 <br>
+
+<h2>Setting up postgres database:</h2>
+<p>
+
+<br>$ sudo -i -u postgres 
+<br>postgres@ubuntu-RV418-RV518-RV718:~$ createdb cptwater
+<br>postgres@ubuntu-RV418-RV518-RV718:~$ createuser -s waterwatch
+<br>postgres@ubuntu-RV418-RV518-RV718:~$ psql
+<br>psql (12.3 (Ubuntu 12.3-1.pgdg18.04+1), server 11.8 (Ubuntu 11.8-1.pgdg18.04+1))
+<br>Type "help" for help.
+<br>
+<br>postgres=# alter user waterwatch password 'postgres';
+<br>ALTER ROLE
+<br>postgres=# commit;
+<br>WARNING:  there is no transaction in progress
+<br>COMMIT
+<br>postgres=# \q
+<br>postgres@ubuntu-RV418-RV518-RV718:~$ psql cptwater
+<br>psql (12.3 (Ubuntu 12.3-1.pgdg18.04+1), server 11.8 (Ubuntu 11.8-1.pgdg18.04+1))
+<br>Type "help" for help.
+<br>
+<br>cptwater=# grant all privileges on database cptwater to waterwatch;
+<br>GRANT
+<br>cptwater=# create extension postgis;
+<br>CREATE EXTENSION
+<br>cptwater=# create extension postgis_topology;
+<br>CREATE EXTENSION
+<br>cptwater=# \q
+<br>postgres@ubuntu-RV418-RV518-RV718:~$ 
+</p>
 
 <h2>Installing Django Leaflet</h2>
 <ul>
