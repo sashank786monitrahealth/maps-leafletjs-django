@@ -110,3 +110,8 @@ update-alternatives: using /usr/share/postgresql/12/man/man1/postmaster.1.gz to 
 <li>pip install geojson</li>
 </ul>
 
+<h2>Perform Migrations</h2>
+<ul> 
+ <li>   WaterWatch$ python manage.py migrate </li>
+</ul>
+
