@@ -49,6 +49,29 @@ update-alternatives: using /usr/share/postgresql/11/man/man1/postmaster.1.gz to 
 
 </p>
 
+<h2>Install Ubuntu GIS</h2>
+<ul>
+    <li>sudo add-apt-repository ppa:ubuntugis/ppa</li>
+    <li>sudo apt-get update</li>
+</ul>
+
+<h2>Install postgis</h2>
+<ul>
+    <li>sudo apt install postgis postgresql-11-postgis-3</li>
+    <li>sudo apt-get update</li>
+</ul>
+
+
+<h3>postgis log notes</h3>
+Success. You can now start the database server using: <br>
+<br>
+    pg_ctlcluster 12 main start <br>
+<br>
+Ver Cluster Port Status Owner    Data directory              Log file <br>
+12  main    5433 down   postgres /var/lib/postgresql/12/main /var/log/postgresql/postgresql-12-main.log <br>
+update-alternatives: using /usr/share/postgresql/12/man/man1/postmaster.1.gz to provide /usr/share/man/man1/postmaster.1.gz (postmaster.1.gz) in auto mode <br>
+<br>
+
 <h2>Installing Django Leaflet</h2>
 <ul>
 <li>source WaterWatch/venv/bin/activate</li>
